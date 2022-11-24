@@ -1,0 +1,31 @@
+from sklearn.feature_extraction.text import CountVectorizer
+
+
+document = ["One Cent, Two Cents, Old Cent, New Cent: All About Money"]
+
+# Create a Vectorizer Object
+
+vectorizer = CountVectorizer()
+
+vectorizer.fit(document)
+
+# Printing the identified Unique words along with their indices
+
+print("Vocabulary: ", vectorizer.vocabulary_)
+
+# Encode the Document
+
+vector = vectorizer.transform(document)
+
+# Summarizing the Encoded Texts
+
+print("Encoded Document is:")
+
+print(vector.toarray())
+
+Output:
+
+Vocabulary:  {'one': 7, 'cent': 2, 'two': 8, 'cents': 3, 'old': 6, 'new': 5, 'all': 1, 'about': 0, 'money': 4}
+Encoded Document is:
+[[1 1 3 1 1 1 1 1 1]]
+[ ]
